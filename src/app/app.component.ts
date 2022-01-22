@@ -35,6 +35,7 @@ export class AppComponent {
     console.log("startExercise");
 
     this.historyNumbers = [];
+    this.currentNumber = 0;
 
     //Set started state
     this.started = true;
@@ -64,8 +65,9 @@ export class AppComponent {
     //Get random number
     var randomNumber: number = Math.floor(Math.random() * 10);
 
+    //Check if new number is different
     while(true){
-      if(randomNumber!= this.currentNumber)
+      if(randomNumber != this.currentNumber)
         break;
       randomNumber = Math.floor(Math.random() * 10);
     }
