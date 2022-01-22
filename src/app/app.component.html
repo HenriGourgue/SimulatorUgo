@@ -3,5 +3,28 @@
 </div>
 
 <div id="additionZone">
-  Test
+  <span *ngIf="started; else notStarted">{{currentNumber}}</span>
+  <ng-template #notStarted>
+    <span *ngIf="terminated">L'exercice est terminé.</span>
+    <span *ngIf="!terminated">L'exercice n'a pas encore démarré.</span>
+  </ng-template>
 </div>
+
+<div id="resultZone" *ngIf="terminated">
+  <div class="input-group mb-3" style="width: 100%;">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary" type="button" (click)="proposeResult()">Proposer</button>
+    </div>
+    <input type="text" class="form-control" placeholder="Proposition de résultat" aria-label="" aria-describedby="basic-addon1" #result>
+  </div>
+</div>
+
+<div id="startZone" *ngIf="!started">
+  <button type="button" class="btn btn-outline-primary" (click)="startExercise()">{{buttonText}}</button>
+</div>
+
+<footer class="bg-light text-center text-lg-start" style="bottom: 0;">
+  <div class="fixed-bottom" style="text-align: center;">
+    Made with ❤️ by Henri Gourgue
+  </div>
+</footer>
