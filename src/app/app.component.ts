@@ -61,10 +61,14 @@ export class AppComponent {
 
     console.log("nextNumber");
 
-    this.currentNumber = 23;
-
     //Get random number
     var randomNumber: number = Math.floor(Math.random() * 10);
+
+    while(true){
+      if(randomNumber!= this.currentNumber)
+        break;
+      randomNumber = Math.floor(Math.random() * 10);
+    }
 
     //Change current number
     this.currentNumber = randomNumber;
