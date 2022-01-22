@@ -4,7 +4,7 @@
 </div>
 
 <div id="additionZone">
-  <span *ngIf="started; else notStarted">{{currentNumber}}</span>
+  <span *ngIf="started; else notStarted" id="ugoJTM">{{currentNumber}}</span>
   <ng-template #notStarted>
     <span *ngIf="terminated">L'exercice est terminé.</span>
     <span *ngIf="!terminated">L'exercice n'a pas encore démarré.</span>
