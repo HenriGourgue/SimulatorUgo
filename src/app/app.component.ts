@@ -34,6 +34,8 @@ export class AppComponent {
 
     console.log("startExercise");
 
+    this.historyNumbers = [];
+
     //Set started state
     this.started = true;
     this.terminated = false;
@@ -58,6 +60,8 @@ export class AppComponent {
   nextNumber(){
 
     console.log("nextNumber");
+
+    this.currentNumber = 23;
 
     //Get random number
     var randomNumber: number = Math.floor(Math.random() * 10);
@@ -94,5 +98,12 @@ export class AppComponent {
         alert('Tu t\'es trompé petite salope, le résultat c\'est ' + String(correctResult) + ' !');
       }
     }
+  }
+
+  test(){
+
+    console.log('test');
+
+    
   }
 }
