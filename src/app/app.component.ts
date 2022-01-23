@@ -19,6 +19,10 @@ export class AppComponent {
 
   //Ball exercise
   ballSubscription: Subscription | undefined;
+  leftMargin: number = 0;
+  rightMargin: number = 80;
+  moveImgTime: number = 20;
+  goingLeft: Boolean = true;
 
   //Number exercise
   additionSubscription: Subscription | undefined;
@@ -54,6 +58,11 @@ export class AppComponent {
     //Change currentNumber (interval)
     this.additionSubscription = interval(this.changeNumberTime).subscribe((() =>{
       this.nextNumber();
+    }));
+
+    //Start moving image
+    this.ballSubscription = interval(this.moveImgTime).subscribe((() =>{
+      this.moveBall();
     }));
   }
 
@@ -106,10 +115,33 @@ export class AppComponent {
     }
   }
 
-  test(){
+  //Ball exercise
+  moveBall(){
 
-    console.log('test');
+    console.log("moveBall");
 
-    
+    if(this.leftMargin === 0){
+
+      this.goingLeft = false;
+    } else if(this.leftMargin === 90){
+
+      this.goingLeft = true;
+    }
+
+    if(this.goingLeft){
+
+      this.leftMargin -= 0.25;
+      this.rightMargin += 0.25;
+    } else {
+
+      this.leftMargin += 0.25;
+      this.rightMargin -= 0.25;
+    }
+
+  }
+
+  updateMargins(){
+
+    return 'margin-left: ' + String(this.leftMargin) + '%; margin-right: ' + String(this.rightMargin) + '%;'
   }
 }

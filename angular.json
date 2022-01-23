@@ -29,7 +29,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/troll.png"
+              "src/assets/ball.jpeg"
             ],
             "styles": [
               "src/styles.scss"
