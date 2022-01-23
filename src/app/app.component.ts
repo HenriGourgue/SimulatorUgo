@@ -123,7 +123,7 @@ export class AppComponent {
     if(this.leftMargin === 0){
 
       this.goingLeft = false;
-    } else if(this.leftMargin === 90){
+    } else if(this.leftMargin === 80){
 
       this.goingLeft = true;
     }
